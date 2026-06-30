@@ -82,10 +82,10 @@ namespace VRCrowdSourcing.BackendIntegration
         {
             if (proposalData == null) return;
 
-            var controller = ProposalUIToolkitController.Instance
-                ?? FindFirstObjectByType<ProposalUIToolkitController>(FindObjectsInactive.Include);
-            // var controller = ProposalUIController.Instance
-            //     ?? FindFirstObjectByType<ProposalUIController>(FindObjectsInactive.Include);
+           // var controller = ProposalUIToolkitController.Instance
+           //     ?? FindFirstObjectByType<ProposalUIToolkitController>(FindObjectsInactive.Include);
+             var controller = ProposalUIController.Instance
+                 ?? FindFirstObjectByType<ProposalUIController>(FindObjectsInactive.Include);
 
             if (controller != null)
             {

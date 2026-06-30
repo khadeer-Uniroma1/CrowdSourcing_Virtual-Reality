@@ -4,6 +4,7 @@
     padding: 20px;
     background-color: rgba(18, 22, 30, 0.92);
     border-radius: 10px;
+    flex-grow: 1;
 }
 .proposal-card-2 {
     width: 650px;

@@ -15,6 +15,7 @@ namespace VRCrowdSourcing.BackendIntegration
 
         [Header("Header")]
         [SerializeField] private TMP_Text titleText;
+        [SerializeField] private TMP_Text voteBadge;
 
         [Header("Metadata")]
         [SerializeField] private TMP_Text categoryText;
@@ -96,6 +97,7 @@ namespace VRCrowdSourcing.BackendIntegration
             }
 
             if (titleText != null) titleText.text = proposal.title;
+            if (voteBadge != null) voteBadge.text = $"\U0001f525 {proposal.votes} Votes";
             if (categoryText != null) categoryText.text = "Category: " + proposal.category;
             if (statusText != null) statusText.text = "Status: " + proposal.status;
             if (votesText != null) votesText.text = "Votes: " + proposal.votes;
@@ -206,7 +208,8 @@ namespace VRCrowdSourcing.BackendIntegration
 
             if (votesText != null)
             {
-                votesText.text = "Votes: " + currentProposal.votes;
+               // votesText.text = "Votes: " + currentProposal.votes;
+                voteBadge.text = $"\U0001f525 {currentProposal.votes} Votes";
             }
         }
 

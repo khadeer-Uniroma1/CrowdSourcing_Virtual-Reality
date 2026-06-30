@@ -66,11 +66,16 @@ public class ProposalUIToolkitController : MonoBehaviour
         descriptionLabel = root.Q<Label>("DescriptionLabel");
 
         proposalImage = root.Q<VisualElement>("ProposalImage");
-        proposalImage.pickingMode = PickingMode.Ignore;
+       // proposalImage.pickingMode = PickingMode.Ignore;
 
         voteButton = root.Q<Button>("VoteButton");
         navigateButton = root.Q<Button>("NavigateButton");
         closeButton = root.Q<Button>("CloseButton");
+
+        voteButton?.RegisterCallback<UnityEngine.UIElements.PointerDownEvent>(evt => Debug.Log("VoteButton PointerDown"));
+        voteButton?.RegisterCallback<UnityEngine.UIElements.PointerUpEvent>(evt => Debug.Log("VoteButton PointerUp"));
+        voteButton?.RegisterCallback<UnityEngine.UIElements.PointerEnterEvent>(evt => Debug.Log("VoteButton PointerEnter"));
+        voteButton?.RegisterCallback<UnityEngine.UIElements.ClickEvent>(evt => Debug.Log("VoteButton ClickEvent"));
 
         Debug.Log($"VoteButton found: {voteButton != null}");
         Debug.Log($"NavigateButton found: {navigateButton != null}");
