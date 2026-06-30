@@ -1,0 +1,37 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/panel_ui.uss?fileID=7433441132597879392&amp;guid=09f71d2d34a303e4382af24af1c1a78e&amp;type=3#panel_ui"/>
+
+    <ui:VisualElement name="Root" class="proposal-card">
+
+        <ui:VisualElement name="ImageContainer" class="image-container">
+            <ui:VisualElement name="ProposalImage" class="proposal-image"/>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="Header" class="header">
+            <ui:Label name="TitleLabel" text="Title"/>
+            <ui:Label name="VoteBadge" text="🔥 221 Votes"/>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="Metadata" class="metadata-label">
+            <ui:Label name="CategoryLabel" text="Category : Traffic"/>
+            <ui:Label name="StatusLabel" text="Status : In Progress"/>
+            <ui:Label name="SeverityLabel" text="Severity : Medium"/>
+            <ui:Label name="DateLabel" text="Date : 2026-06-01"/>
+        </ui:VisualElement>
+
+        <ui:ScrollView name="DescriptionScrollView" touch-scroll-type="Clamped" class="description-scroll">
+            <ui:Label name="DescriptionLabel" text="Description"/>
+        </ui:ScrollView>
+
+        <!-- <ui:VisualElement name="ImageContainer" class="image-container">
+            <ui:VisualElement name="ProposalImage" class="proposal-image"/>
+        </ui:VisualElement> -->
+
+        <ui:VisualElement name="Footer" class="footer">
+            <ui:Button name="VoteButton" text="👍 Vote" class="VoteButton"/>
+            <ui:Button name="NavigateButton" text="📍 Navigate" class="NavigateButton"/>
+            <ui:Button name="CloseButton" text="✕ Close" class="CloseButton"/>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

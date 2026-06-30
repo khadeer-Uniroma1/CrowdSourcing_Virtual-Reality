@@ -1,0 +1,125 @@
+.proposal-card {
+    width: 650px;
+    height: 1000px;
+    padding: 20px;
+    background-color: rgba(18, 22, 30, 0.92);
+    border-radius: 10px;
+}
+.proposal-card-2 {
+    width: 650px;
+    height: 100px;
+    padding: 20px;
+    background-color: rgba(18, 22, 30, 0.92);
+    border-radius: 10px;
+}
+
+.header {
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#TitleLabel {
+    font-size: 30px;
+    color: white;
+    -unity-font-style: bold;
+}
+
+#VoteBadge {
+    margin-top: 8px;
+    color: yellow;
+    font-size: 22px;
+    -unity-font-style: bold;
+}
+
+.metadata-label {
+    margin-bottom: 15px;
+}
+
+#CategoryLabel,
+#StatusLabel,
+#SeverityLabel,
+#DateLabel {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 8px; /* Slightly reduced to optimize spacing */
+}
+
+/* ScrollView styling applied directly to the ScrollView element */
+.description-scroll {
+    height: 200px;
+    padding: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+#DescriptionLabel {
+    font-size: 18px;
+    color: white;
+    white-space: normal;
+    max-width: 100%;
+    text-wrap: wrap;
+}
+
+.image-container {
+    height: 360px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.image-container,
+#ProposalImage,
+.description-scroll,
+#DescriptionScrollView {
+    pointer-events: none;
+}
+
+.proposal-image {
+    flex-grow: 1;
+    height: 360px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer Button {
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+    color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    pointer-events: auto;
+}
+
+.footer Button:hover {
+    opacity: 1.0;
+}
+
+.VoteButton {
+    background-color: indigo;
+}
+.VoteButton:hover {
+    background-color: rgb(157, 78, 221);
+}
+
+#NavigateButton {
+    background-color: blue;
+}
+#NavigateButton:hover {
+    background-color: rgb(2, 62, 125);
+}
+
+#CloseButton {
+    background-color: red;
+}
+#CloseButton:hover {
+    background-color: rgb(173, 40, 49);
+}

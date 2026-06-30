@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c8d86c11b343e40a7c43bec45760d8, type: 3}
+  m_Name: BeaconIconConfig
+  m_EditorClassIdentifier: Assembly-CSharp::BeaconIconConfig
+  categoryIcons:
+  - category: safety
+    icon: {fileID: 2800000, guid: 7db10802f8267864e99b1d992d60ffef, type: 3}
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - category: transport
+    icon: {fileID: 2800000, guid: 613efb3262450814992d368a815486ee, type: 3}
+    color: {r: 0, g: 0, b: 1, a: 1}
+  - category: accessibility
+    icon: {fileID: 2800000, guid: d148bc1f986beff4e883ea347eac5c80, type: 3}
+    color: {r: 0, g: 1, b: 0, a: 1}
+  - category: parking
+    icon: {fileID: 2800000, guid: db9eff8bf6b829744a8e478746f92c7b, type: 3}
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - category: traffic
+    icon: {fileID: 2800000, guid: 1ec540a709c48084782dbf32a5b02ba8, type: 3}
+    color: {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
+  defaultIcon: {fileID: 2800000, guid: 6075e47e648be8f408431773678a34a2, type: 3}
