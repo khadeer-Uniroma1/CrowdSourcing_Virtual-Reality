@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
+using VRCrowdSourcing.InspectionSystem;
 
 namespace VRCrowdSourcing.BackendIntegration
 {
@@ -32,7 +33,7 @@ namespace VRCrowdSourcing.BackendIntegration
 
         [Header("Buttons")]
         [SerializeField] private Button voteButton;
-        [SerializeField] private Button navigateButton;
+        [SerializeField] private Button landOnStreetButton;
         [SerializeField] private Button closeButton;
 
         private ProposalData currentProposal;
@@ -69,7 +70,7 @@ namespace VRCrowdSourcing.BackendIntegration
 
             if (voteButton != null) voteButton.onClick.AddListener(OnVoteClicked);
 
-            if (navigateButton != null) navigateButton.onClick.AddListener(OnNavigateClicked);
+            if (landOnStreetButton != null) landOnStreetButton.onClick.AddListener(OnLandOnStreetClicked);
         }
 
         private void OnDisable()
@@ -78,7 +79,7 @@ namespace VRCrowdSourcing.BackendIntegration
 
             if (voteButton != null)   voteButton.onClick.RemoveListener(OnVoteClicked);
 
-            if (navigateButton != null)   navigateButton.onClick.RemoveListener(OnNavigateClicked);
+            if (landOnStreetButton != null) landOnStreetButton.onClick.RemoveListener(OnLandOnStreetClicked);
         }
 
         public void SetProposalData(ProposalData proposal)
@@ -214,9 +215,14 @@ namespace VRCrowdSourcing.BackendIntegration
             }
         }
 
-        private static void OnNavigateClicked()
+        private void OnLandOnStreetClicked()
         {
-            Debug.Log("Navigate clicked");
+            Debug.Log("landOnStreetButton clicked");
+            if (currentProposal == null) 
+            {
+                return;
+            }
+             InspectionManager.Instance.StartInspection(currentProposal);
 
             // Later:
             // teleport player
@@ -236,7 +242,7 @@ namespace VRCrowdSourcing.BackendIntegration
             if (descriptionText == null) Debug.LogError("DescriptionText missing");
             if (image == null) Debug.LogError("image missing");
             if (voteButton == null) Debug.LogError("VoteButton missing");
-            if (navigateButton == null) Debug.LogError("NavigateButton missing");
+            if (landOnStreetButton == null) Debug.LogError("landOnStreetButton missing");
             if (closeButton == null) Debug.LogError("CloseButton missing");
         }
     }
