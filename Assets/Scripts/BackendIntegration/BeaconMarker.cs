@@ -157,8 +157,8 @@ namespace VRCrowdSourcing.BackendIntegration
             DestroyImmediate(bg.GetComponent<Collider>());
             bg.GetComponent<Renderer>().sharedMaterial = BuildEmissiveMaterial(_color, 0.55f);
 
-            // Icon sphere on top
-            GameObject icon = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            // Icon quad (flat surface for proper 2D texture display)
+            GameObject icon = GameObject.CreatePrimitive(PrimitiveType.Quad);
             icon.name = "BillboardIcon";
             icon.transform.SetParent(_billboardRoot, false);
             icon.transform.localPosition = new Vector3(0f, 0f, 0.01f);
@@ -170,7 +170,7 @@ namespace VRCrowdSourcing.BackendIntegration
             Debug.Log($"BeaconMarker: Category={category}  Icon={(iconTex != null ? iconTex.name : "null (fallback)")}");
 
             icon.GetComponent<Renderer>().sharedMaterial = iconTex != null
-                ? BuildIconMaterial(iconTex)
+                ? BuildIconMaterial(iconTex, _color)
                 : BuildEmissiveMaterial(Color.white, 1.0f);
         }
 
@@ -246,16 +246,18 @@ namespace VRCrowdSourcing.BackendIntegration
             return mat;
         }
 
-        private static Material BuildIconMaterial(Texture2D tex)
+        private static Material BuildIconMaterial(Texture2D tex, Color tint)
         {
             Shader shader = Shader.Find("Universal Render Pipeline/Unlit");
             Material mat = new Material(shader);
 
             mat.SetTexture("_BaseMap", tex);
-            mat.SetColor("_BaseColor", Color.white);
+            mat.SetColor("_BaseColor", tint);
             mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
             mat.SetFloat("_Surface", 1f);
             mat.SetFloat("_Blend", 0f);
+            mat.SetFloat("_SrcBlend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            mat.SetFloat("_DstBlend", (float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
             mat.SetFloat("_ZWrite", 0f);
             mat.renderQueue = 3001;
 

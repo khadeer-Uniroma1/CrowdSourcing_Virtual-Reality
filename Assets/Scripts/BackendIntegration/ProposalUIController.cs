@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -209,7 +209,8 @@ namespace VRCrowdSourcing.BackendIntegration
             if (votesText != null)
             {
                // votesText.text = "Votes: " + currentProposal.votes;
-                voteBadge.text = $"\U0001f525 {currentProposal.votes} Votes";
+                voteBadge.text = $"🔥 {currentProposal.votes} Votes";
+              //  voteBadge.text = $"\U0001f525 {currentProposal.votes} Votes";
             }
         }
 
