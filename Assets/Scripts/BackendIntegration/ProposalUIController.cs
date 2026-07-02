@@ -39,6 +39,7 @@ namespace VRCrowdSourcing.BackendIntegration
         private ProposalData currentProposal;
 
         private UIFollowPlayer followPlayer;
+        private ProposalMarker currentMarker;
 
         private void Awake()
         {
@@ -82,7 +83,7 @@ namespace VRCrowdSourcing.BackendIntegration
             if (landOnStreetButton != null) landOnStreetButton.onClick.RemoveListener(OnLandOnStreetClicked);
         }
 
-        public void SetProposalData(ProposalData proposal)
+        public void SetProposalData(ProposalData proposal, ProposalMarker marker)
         {
             if (proposal == null)
             {
@@ -91,6 +92,7 @@ namespace VRCrowdSourcing.BackendIntegration
             }
 
             currentProposal = proposal;
+            currentMarker = marker;
 
             if (panelRoot != null)
             {
@@ -217,12 +219,14 @@ namespace VRCrowdSourcing.BackendIntegration
 
         private void OnLandOnStreetClicked()
         {
-            Debug.Log("landOnStreetButton clicked");
-            if (currentProposal == null) 
+            if (currentProposal == null || currentMarker == null)
             {
+                Debug.LogError("Land On Street: proposal or marker is missing.");
                 return;
             }
-             InspectionManager.Instance.StartInspection(currentProposal);
+            Debug.Log("landOnStreetButton clicked");
+
+            InspectionManager.Instance.StartInspection(currentProposal, currentMarker);
 
             // Later:
             // teleport player

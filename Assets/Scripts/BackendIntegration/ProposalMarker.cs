@@ -76,6 +76,18 @@ namespace VRCrowdSourcing.BackendIntegration
             ShowProposalOnUI();
         }
 
+        /*
+                public Vector3 GetLandingPosition(float heightBelowMarker)
+                {
+                    return transform.position - transform.up * heightBelowMarker;
+                }
+        */
+
+        public Vector3 GetLandingPosition(float heightAboveMarker)
+        {
+            return transform.position + transform.up * heightAboveMarker;
+        }
+
         // ── UI dispatch ───────────────────────────────────────────────────────
 
         private void ShowProposalOnUI()
@@ -89,7 +101,7 @@ namespace VRCrowdSourcing.BackendIntegration
 
             if (controller != null)
             {
-                controller.SetProposalData(proposalData);
+                controller.SetProposalData(proposalData,this);
                 Debug.Log($"ProposalMarker: Sent '{proposalData.title}' to UI");
             }
             else

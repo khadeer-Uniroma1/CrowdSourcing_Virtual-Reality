@@ -3598,13 +3598,14 @@ Transform:
   m_GameObject: {fileID: 1201927137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 401.36826, y: -79.76477, z: -70.65726}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 89296136}
   - {fileID: 1933681938}
   - {fileID: 1239064625}
+  - {fileID: 2069408350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239064624
@@ -3651,6 +3652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fc6e164b656e64a827527f0edd1b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InspectionManager
+  landingController: {fileID: 2069408351}
 --- !u!1 &1254639996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5444,6 +5446,11 @@ MonoBehaviour:
   verticalSpeed: 20
   rotationSpeed: 30
   xrCamera: {fileID: 1004799726}
+--- !u!4 &1948195788 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 447621360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1949899730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5658,6 +5665,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 0}
   m_MaterialIndex: 0
+--- !u!1 &2069408349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069408350}
+  - component: {fileID: 2069408351}
+  m_Layer: 0
+  m_Name: LandingController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2069408350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069408349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1201927138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069408351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069408349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6ebe9cf8c36af44ad1551875ef86ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LandingController
+  xrOrigin: {fileID: 1948195788}
+  landingDuration: 2.5
+  distanceBelowMarker: 97
 --- !u!1 &2079025888
 GameObject:
   m_ObjectHideFlags: 0
